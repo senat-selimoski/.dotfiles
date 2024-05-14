@@ -1,0 +1,14 @@
+#!/bin/sh
+
+wp=$(find ~/.config/images -type f -iname "*.jpg" -o -name "*.png" | shuf -n 1)
+
+feh --scale-down --bg-fill $wp 
+wal -c 
+wal -i $wp -o "${HOME}/.config/i3/update-i3-colors.sh"
+wal -i $wp
+
+~/.config/scripts/openrgb-start.sh &
+~/.config/polybar/wal-to-polybar.sh $wp
+~/.config/polybar/launch.sh
+
+exec rm -f ~/.fehbg
