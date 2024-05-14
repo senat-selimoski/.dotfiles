@@ -30,11 +30,11 @@ if ! command -v yay &> /dev/null; then
 fi
 
 # Install packages
-yay -S --noconfirm feh python-pywal i3-gaps kitty alacritty neovim picom polybar rofi thunar obs-studio google-chrome openrgb
+yay -S --needed --noconfirm feh python-pywal i3-gaps kitty alacritty neovim picom polybar rofi thunar obs-studio google-chrome openrgb
 
 # Install zsh and oh-my-zsh
 if ! command -v zsh &> /dev/null; then
-    sudo pacman -S --noconfirm zsh
+    sudo pacman -S --needed --noconfirm zsh
     chsh -s $(which zsh)
 fi
 
@@ -44,7 +44,7 @@ fi
 
 # Check for existing Nvidia drivers and install if not present
 if ! pacman -Qs nvidia > /dev/null; then
-    sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+    sudo pacman -S --needed --noconfirm nvidia nvidia-utils nvidia-settings
 else
     echo "Nvidia drivers are already installed."
 fi
@@ -56,6 +56,23 @@ if [ -f "$HOME/.dotfiles/setup.sh" ]; then
 else
     echo "setup.sh script not found in ~/.dotfiles"
 fi
+
+# Check and install fonts
+install_font() {
+    local font_name=$1
+    local package_name=$2
+    if ! fc-list | grep -qi "$font_name"; then
+        echo "Installing $font_name..."
+        sudo pacman -S --needed --noconfirm "$package_name"
+    else
+        echo "$font_name is already installed."
+    fi
+}
+
+install_font "Nerd Fonts" "nerd-fonts"
+install_font "Noto" "noto-fonts noto-fonts-cjk noto-fonts-emoji"
+install_font "Font Awesome" "ttf-font-awesome"
+
 
 echo "Installation and setup complete! Please reboot your system for the Nvidia drivers to take effect."
 
