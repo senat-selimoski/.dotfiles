@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wp=$(find ~/.config/images -type f -iname "*.jpg" -o -name "*.png" | shuf -n 1)
+wp=$(find ~/.dotfiles/images -type f -iname "*.jpg" -o -name "*.png" | shuf -n 1)
 
 feh --scale-down --bg-fill $wp 
 wal -c 
