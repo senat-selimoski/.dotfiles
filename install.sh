@@ -31,6 +31,7 @@ fi
 
 # Install packages
 yay -S --needed --noconfirm feh python-pywal i3-gaps kitty alacritty neovim picom polybar rofi thunar obs-studio google-chrome openrgb
+sudo pacman -S --needed --noconfirm gparted
 
 # Install zsh and oh-my-zsh
 if ! command -v zsh &> /dev/null; then
