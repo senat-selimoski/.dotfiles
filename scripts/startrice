@@ -11,4 +11,5 @@ wal -i $wp
 ~/.config/polybar/wal-to-polybar.sh $wp
 ~/.config/polybar/launch.sh
 
+xset -dpms
 exec rm -f ~/.fehbg
