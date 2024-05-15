@@ -5,6 +5,7 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
 -- keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
 keymap.set("i", "jj", "<Esc>", opts)
+keymap.set("n", "U", "<C-r>", opts)
 
 -- Pane Navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
@@ -16,4 +17,7 @@ keymap.set("n", "<C-l>", "<C-w>l", opts)
 keymap.set("n", "<leader>sh", ":vsplit<CR>", opts)
 keymap.set("n", "<leader>sv", ":split<CR>", opts)
 -- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
+
+
+
 
