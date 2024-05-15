@@ -8,4 +8,4 @@ ln -sf ~/.dotfiles/polybar ~/.config
 ln -sf ~/.dotfiles/rofi ~/.config
 ln -sf ~/.dotfiles/scripts ~/.config
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/scripts/startrice ~/.local/bin
+ln -sf ~/.dotfiles/alacritty ~/.config
