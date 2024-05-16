@@ -7,9 +7,6 @@ return {
       "MunifTanjim/nui.nvim",
     },
     cmd = { "Neotree" },
-    keys = {
-      { "<Leader>n", "<Cmd>Neotree toggle<CR>" }, -- change or remove this line if relevant.
-    },
     opts = {
       statusline = true,
     },
