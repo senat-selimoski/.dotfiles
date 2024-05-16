@@ -20,7 +20,7 @@ local opts = {
     		lazy = true, -- should plugins be lazy-loaded?
   	},	
 	install = {
-		colorscheme = { "nightfox" }
+		colorscheme = { "tokyonight" }
 	},
 	rtp = {
       	---@type string[] list any plugins you want to disable here
@@ -40,5 +40,5 @@ local opts = {
 	},
 }
 
-
 require("lazy").setup("plugins", opts)
+vim.cmd("colorscheme tokyonight")
