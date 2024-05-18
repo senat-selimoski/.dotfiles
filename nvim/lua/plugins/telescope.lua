@@ -3,6 +3,13 @@ local config = function()
   local telescope = require('telescope')
   telescope.setup({
     defaults = {
+      layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          width = 0.9,
+          height = 0.9,
+        },
+      },
       mappings = {
         i = {
           ["<C-j>"] = "move_selection_next",
@@ -12,15 +19,12 @@ local config = function()
     },
     pickers = {
       find_files = {
-        theme = "ivy",
         previewer = true,
       },
       live_grep = {
-        theme = "ivy",
         previewer = true,
       },
       find_buffers = {
-        theme = "dropdown",
         previewer = true,
       }
     },
