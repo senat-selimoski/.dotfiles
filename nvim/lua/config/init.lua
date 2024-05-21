@@ -17,27 +17,27 @@ require("config.keymaps")
 
 local opts = {
 	defaults = {
-    		lazy = true, -- should plugins be lazy-loaded?
-  	},	
+    lazy = false, -- should plugins be lazy-loaded?
+  },
 	install = {
 		colorscheme = { "tokyonight", "nightfox" }
 	},
 	rtp = {
       	---@type string[] list any plugins you want to disable here
       		disabled_plugins = {
-        		-- "gzip",
-        		-- "matchit",
-        		-- "matchparen",
-        		-- "netrwPlugin",
-        		-- "tarPlugin",
-        		-- "tohtml",
-        		-- "tutor",
-        		-- "zipPlugin",
+        		"gzip",
+        		"matchit",
+        		"matchparen",
+        		"netrwPlugin",
+        		"tarPlugin",
+        		"tohtml",
+        		"tutor",
+        		"zipPlugin",
       		},
     	},
 	change_detection = {
-		notify = true,
+		notify = false,
 	},
 }
 
-require("lazy").setup("plugins", opts)
+require("lazy").setup({{ import = "plugins"}, {import = "plugins.lsp"}}, opts)

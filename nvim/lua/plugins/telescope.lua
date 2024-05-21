@@ -1,6 +1,7 @@
 local keymap = vim.keymap
 local config = function()
   local telescope = require('telescope')
+  local actions = require('telescope.actions')
   telescope.setup({
     defaults = {
       layout_strategy = "horizontal",
@@ -12,8 +13,9 @@ local config = function()
       },
       mappings = {
         i = {
-          ["<C-j>"] = "move_selection_next",
-          ["<C-k>"] = "move_selection_previous",
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         },
       },
     },
@@ -38,11 +40,11 @@ return {
   dependencies = { "nvim-lua/plenary.nvim"},
   config = config,
   keys = {
-    keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
-    keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>"),
-    keymap.set("n", "<leader>ff", ":Telescope find_files<CR>"),
-    keymap.set("n", "<leader>fa", ":Telescope <CR>"),
-    keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>"),
+    keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>", { desc = "Telescope keymaps"}),
+    keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Telescope help tags"}),
+    keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Telescope find files"}),
+    keymap.set("n", "<leader>fa", ":Telescope <CR>", { desc = "Telescope builtins"}),
+    keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Telescope live grep string under cursor"}),
     keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
   }
 }
