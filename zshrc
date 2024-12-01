@@ -106,6 +106,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias lsd="lsd --tree"
 alias lsdl="lsd -al --tree"
+alias python="python3.10"
 
 # Edit .zshrc and add this line
 export PATH=$HOME/.config/rofi/scripts:$PATH
