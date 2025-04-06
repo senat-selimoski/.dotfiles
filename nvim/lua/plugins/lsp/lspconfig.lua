@@ -122,7 +122,50 @@ return {
           provideFormatter = true
         })
       end,
-
+      ["pylsp"] = function()
+        -- configure python language server
+        lspconfig["pylsp"].setup({
+          capabilities = capabilities,
+          settings = {
+            pylsp = {
+              plugins = {
+                -- Enable flake8
+                flake8 = {
+                  enabled = true,
+                  maxLineLength = 120,  -- Optional: Set your preferred max line length
+                },
+                -- Enable pylint
+                pylint = {
+                  enabled = false,
+                },
+                -- Disable other plugins if needed (e.g., pycodestyle, mccabe)
+                pycodestyle = {
+                  enabled = false,
+                },
+                mccabe = {
+                  enabled = false,
+                },
+              },
+            },
+          },
+        })
+      end,
+      ["pyright"] = function()
+        lspconfig["pyright"].setup({
+          capabilities = capabilities,
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic",  -- or "strict"
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                maxLineLength = 120
+              },
+              pythonPath = tostring(vim.fn.getenv("VIRTUAL_ENV")) .. "/bin/python",
+            },
+          },
+        })
+      end,
     })
   end,
  }

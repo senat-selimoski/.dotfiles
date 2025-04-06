@@ -106,7 +106,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias lsd="lsd --tree"
 alias lsdl="lsd -al --tree"
-alias python="python3.10"
+alias python="python3.11"
+alias pip="python3.11 -m pip"
+
 
 # Edit .zshrc and add this line
 export PATH=$HOME/.config/rofi/scripts:$PATH
@@ -127,3 +129,6 @@ export PATH=$PATH:$HOME/go/bin
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/zefe/.lmstudio/bin"

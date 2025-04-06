@@ -71,9 +71,12 @@ install_font() {
 }
 
 install_font "Nerd Fonts" "nerd-fonts"
+install_font "Jetbrains" "ttf-jetbrains-mono"
 install_font "Noto" "noto-fonts noto-fonts-cjk noto-fonts-emoji"
 install_font "Font Awesome" "ttf-font-awesome"
 
+yay -S --needed --noconfirm ttf-icomoon-feather-git
+fc-cache -fv
 
 echo "Installation and setup complete! Please reboot your system for the Nvidia drivers to take effect."
 

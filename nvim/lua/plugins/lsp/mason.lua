@@ -38,7 +38,6 @@ return {
         "sqlls",
         "somesass_ls",
         "tailwindcss",
-        "tsserver",
         "yamlls",
         "zls"
       },
